@@ -1,0 +1,120 @@
+.history-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.filters-card {
+  background: linear-gradient(135deg, #FFF8E7 0%, #FEFAF0 100%);
+}
+
+.sessions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 25px;
+}
+
+.session-card {
+  position: relative;
+  padding-top: 50px;
+  transition: all 0.3s ease;
+}
+
+.session-card:hover {
+  transform: translateY(-4px);
+}
+
+.delete-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  color: #8B7765;
+  opacity: 0.6;
+}
+
+.delete-btn:hover {
+  background: rgba(255, 107, 157, 0.1);
+  color: #FF6B9D;
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.delete-btn .material-icons {
+  font-size: 20px;
+}
+
+.subject-badge {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  color: white;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.session-topic {
+  font-size: 1.5rem;
+  color: #4A4A4A;
+  margin-bottom: 15px;
+  font-family: 'Playfair Display', serif;
+}
+
+.session-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  color: #6B5B00;
+}
+
+.detail-icon {
+  font-size: 1.2rem;
+}
+
+.session-date {
+  font-size: 0.9rem;
+  color: #8B7765;
+  font-weight: 500;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(210, 180, 140, 0.3);
+}
+
+.session-notes {
+  margin-top: 15px;
+  padding: 12px;
+  background: rgba(168, 230, 207, 0.1);
+  border-left: 3px solid #A8E6CF;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: #4A4A4A;
+}
+
+@media (max-width: 768px) {
+  .sessions-grid {
+    grid-template-columns: 1fr;
+  }
+}

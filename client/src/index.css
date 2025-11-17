@@ -1,0 +1,292 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  background: linear-gradient(135deg, #FDF6E3 0%, #F5E6D3 100%);
+  min-height: 100vh;
+  color: #4A4A4A;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+}
+
+.app-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Whimsical Paper Card Effect */
+.paper-card {
+  background: #FEFAF0;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 
+    0 2px 4px rgba(139, 119, 101, 0.1),
+    0 8px 16px rgba(139, 119, 101, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  border: 2px solid rgba(210, 180, 140, 0.3);
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.paper-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 4px 8px rgba(139, 119, 101, 0.15),
+    0 12px 24px rgba(139, 119, 101, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+/* Subtle paper texture */
+.paper-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    repeating-linear-gradient(
+      0deg,
+      rgba(210, 180, 140, 0.03) 0px,
+      rgba(210, 180, 140, 0.03) 1px,
+      transparent 1px,
+      transparent 2px
+    );
+  pointer-events: none;
+  border-radius: 20px;
+}
+
+/* Buttons */
+.btn {
+  padding: 12px 28px;
+  border: none;
+  border-radius: 50px;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn .material-icons {
+  font-size: 20px;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #FF6B9D 0%, #FF8FB5 100%);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #FF8FB5 0%, #FFB3CC 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(255, 107, 157, 0.4);
+}
+
+.btn-secondary {
+  background: linear-gradient(135deg, #A8E6CF 0%, #C1F0DB 100%);
+  color: #2D5F4C;
+}
+
+.btn-secondary:hover {
+  background: linear-gradient(135deg, #C1F0DB 0%, #DAFBE8 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(168, 230, 207, 0.4);
+}
+
+.btn-warning {
+  background: linear-gradient(135deg, #FFD93D 0%, #FFE66D 100%);
+  color: #6B5B00;
+}
+
+.btn-warning:hover {
+  background: linear-gradient(135deg, #FFE66D 0%, #FFF19D 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(255, 217, 61, 0.4);
+}
+
+.btn-danger {
+  background: linear-gradient(135deg, #FF6B6B 0%, #FF8787 100%);
+  color: white;
+}
+
+.btn-danger:hover {
+  background: linear-gradient(135deg, #FF8787 0%, #FFA3A3 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(255, 107, 107, 0.4);
+}
+
+/* Input Fields */
+input, select, textarea {
+  width: 100%;
+  padding: 14px 18px;
+  border: 2px solid rgba(210, 180, 140, 0.3);
+  border-radius: 15px;
+  background: #FFFEF8;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 15px;
+  color: #4A4A4A;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: #FF6B9D;
+  box-shadow: 
+    inset 0 2px 4px rgba(0, 0, 0, 0.05),
+    0 0 0 3px rgba(255, 107, 157, 0.1);
+}
+
+/* Labels */
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #5A5A5A;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Header Styling */
+.app-header {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 30px 20px;
+}
+
+.app-header h1 {
+  font-size: 3.5rem;
+  color: #FF6B9D;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(255, 107, 157, 0.2);
+  letter-spacing: -1px;
+}
+
+.app-header p {
+  font-size: 1.2rem;
+  color: #8B7765;
+  font-weight: 500;
+}
+
+/* Navigation */
+.nav-tabs {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.nav-tab {
+  padding: 12px 30px;
+  border: 2px solid rgba(210, 180, 140, 0.3);
+  background: #FFFEF8;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Quicksand', sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-tab .material-icons {
+  font-size: 20px;
+}
+
+.nav-tab:hover {
+  background: #FFF8E7;
+  border-color: #FF6B9D;
+}
+
+.nav-tab.active {
+  background: linear-gradient(135deg, #FF6B9D 0%, #FF8FB5 100%);
+  color: white;
+  border-color: #FF6B9D;
+  box-shadow: 0 4px 12px rgba(255, 107, 157, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .app-header h1 {
+    font-size: 2.5rem;
+  }
+  
+  .paper-card {
+    padding: 20px;
+  }
+  
+  .btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F5E6D3;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #FF6B9D 0%, #FF8FB5 100%);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #FF8FB5 0%, #FFB3CC 100%);
+}

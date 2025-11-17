@@ -24,14 +24,19 @@ A whimsical, Studio Ghibli-inspired Pomodoro study tracking application built wi
 
 1. **Clone the repository**
    ```bash
-   cd /Users/anjanaa/MyProjects/pomodoro-app
+   git clone https://github.com/anv10/study-sanctuary-pomodoro-app.git
+   cd study-sanctuary-pomodoro-app
    ```
 
 2. **Install dependencies**
    ```bash
+   # Install both backend and frontend dependencies at once
+   npm run install-all
+   
+   # Or manually:
    # Install backend dependencies
    npm install
-
+   
    # Install frontend dependencies
    cd client
    npm install
@@ -40,12 +45,14 @@ A whimsical, Studio Ghibli-inspired Pomodoro study tracking application built wi
 
 3. **Set up environment variables**
    
-   The `.env` file is already created with:
-   ```
+   Create a `.env` file in the root directory with:
+   ```env
    PORT=5001
    MONGODB_URI=mongodb://localhost:27017/pomodoro-study-tracker
    NODE_ENV=development
    ```
+   
+   > **Note:** The `.env` file is not included in the repository for security. You need to create it yourself.
 
 4. **Start MongoDB**
    
